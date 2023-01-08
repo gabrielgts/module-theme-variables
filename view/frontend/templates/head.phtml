@@ -1,0 +1,20 @@
+<?php
+/**
+ * Copyright © Gtstudio. All rights reserved.
+ * @var $viewModel \Gtstudio\ThemeVariables\ViewModel\Head
+*/
+
+$viewModel = $block->getViewModel();
+
+$font = $viewModel->getConfig('font_url');
+?>
+
+<?php if (!empty($font)) : ?>
+    <link rel="stylesheet" href="<?= $font ?>" crossorigin="anonymous">
+<?php endif; ?>
+
+<style>
+    :root {
+    <?= $viewModel->getCssVariables() ?>
+    }
+</style>

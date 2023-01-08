@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+        <!-- CSS native variables on admin -->
+        <type name="Magento\Theme\Model\Design\Config\MetadataProvider">
+            <arguments>
+                <argument name="metadata" xsi:type="array">
+                    <item name="custom_theme_variables" xsi:type="array">
+                        <item name="path" xsi:type="string">design/variables/custom_theme_variables</item>
+                        <item name="fieldset" xsi:type="string">other_settings/variables/theme_variables</item>
+                        <item name="backend_model" xsi:type="string">Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</item>
+                    </item>
+                    <item name="variables_font_family" xsi:type="array">
+                        <item name="path" xsi:type="string">design/variables/font_family</item>
+                        <item name="fieldset" xsi:type="string">other_settings/variables/typography</item>
+                    </item>
+                    <item name="variables_font_url" xsi:type="array">
+                        <item name="path" xsi:type="string">design/variables/font_url</item>
+                        <item name="fieldset" xsi:type="string">other_settings/variables/typography</item>
+                    </item>
+                </argument>
+            </arguments>
+        </type>
+</config>

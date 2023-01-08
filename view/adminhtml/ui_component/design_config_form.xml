@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="other_settings">
+        <fieldset name="variables" sortOrder="1">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">category_slider</item>
+                </item>
+            </argument>
+            <settings>
+                <level>1</level>
+                <collapsible>true</collapsible>
+                <label translate="true">Variables</label>
+            </settings>
+            <fieldset name="theme_variables" sortOrder="10">
+                <settings>
+                    <level>2</level>
+                    <label translate="true">Theme</label>
+                </settings>
+                <dynamicRows name="custom_theme_variables" sortOrder="30">
+                    <settings>
+                        <addButtonLabel translate="true">Add</addButtonLabel>
+                        <deleteProperty>delete</deleteProperty>
+                        <additionalClasses>
+                            <class name="admin__field-wide">true</class>
+                        </additionalClasses>
+                        <dndConfig>
+                            <param name="enabled" xsi:type="boolean">true</param>
+                        </dndConfig>
+                        <componentType>dynamicRows</componentType>
+                    </settings>
+                    <container name="record" component="Magento_Ui/js/dynamic-rows/record">
+                        <argument name="data" xsi:type="array">
+                            <item name="config" xsi:type="array">
+                                <item name="isTemplate" xsi:type="boolean">true</item>
+                                <item name="is_collection" xsi:type="boolean">true</item>
+                                <item name="componentType" xsi:type="string">container</item>
+                            </item>
+                        </argument>
+                        <field name="key" formElement="input">
+                            <argument name="data" xsi:type="array">
+                                <item name="config" xsi:type="array">
+                                    <item name="fit" xsi:type="boolean">false</item>
+                                </item>
+                            </argument>
+                            <settings>
+                                <validation>
+                                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                                </validation>
+                                <dataType>text</dataType>
+                                <dataScope>key</dataScope>
+                                <label>Variable Name</label>
+                            </settings>
+                        </field>
+                        <field name="value" formElement="colorPicker" component="Magento_Ui/js/form/element/color-picker">
+                            <settings>
+                                <validation>
+                                    <rule name="required-entry" xsi:type="boolean">false</rule>
+                                </validation>
+                                <dataType>text</dataType>
+                                <label translate="true">Value</label>
+                                <dataScope>value</dataScope>
+                                <elementTmpl>ui/form/element/color-picker</elementTmpl>
+                                <componentType>field</componentType>
+                            </settings>
+                            <formElements>
+                                <colorPicker class="Magento\Ui\Component\Form\Element\ColorPicker">
+                                    <settings>
+                                        <colorFormat>hex</colorFormat>
+                                        <colorPickerMode>full</colorPickerMode>
+                                    </settings>
+                                </colorPicker>
+                            </formElements>
+                        </field>
+                        <actionDelete>
+                            <argument name="data" xsi:type="array">
+                                <item name="config" xsi:type="array">
+                                    <item name="componentType" xsi:type="string">actionDelete</item>
+                                    <item name="dataType" xsi:type="string">text</item>
+                                    <item name="fit" xsi:type="boolean">false</item>
+                                    <item name="label" xsi:type="string">Actions</item>
+                                    <item name="additionalClasses" xsi:type="string">data-grid-actions-cell</item>
+                                    <item name="template" xsi:type="string">Magento_Backend/dynamic-rows/cells/action-delete</item>
+                                </item>
+                            </argument>
+                        </actionDelete>
+                    </container>
+                </dynamicRows>
+            </fieldset>
+            <fieldset name="typography" sortOrder="30">
+                <settings>
+                    <level>2</level>
+                    <label translate="true">Typography</label>
+                </settings>
+                <field name="variables_font_url" formElement="input">
+                    <settings>
+                        <dataType>text</dataType>
+                        <label translate="true">Font Url</label>
+                        <dataScope>variables_font_url</dataScope>
+                        <validation>
+                            <rule name="validate-url" xsi:type="boolean">true</rule>
+                        </validation>
+                    </settings>
+                </field>
+                <field name="variables_font_family" formElement="input">
+                    <settings>
+                        <dataType>text</dataType>
+                        <label translate="true">Font Family</label>
+                        <dataScope>variables_font_family</dataScope>
+                    </settings>
+                </field>
+            </fieldset>
+        </fieldset>
+    </fieldset>
+</form>
